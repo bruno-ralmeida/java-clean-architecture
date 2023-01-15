@@ -5,9 +5,9 @@ import com.xxnbr.cleanarch.core.domain.Address;
 import com.xxnbr.cleanarch.dataprovider.client.FindAddressByZipCodeClient;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class FindAddressByZipCodeImpl implements FindAddressByZipCode {
 
     @Autowired

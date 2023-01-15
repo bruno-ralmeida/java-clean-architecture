@@ -2,6 +2,6 @@ package com.xxnbr.cleanarch.core.dataprovider;
 
 import com.xxnbr.cleanarch.core.domain.Customer;
 
-public interface InsertCustomer {
-    void insert(final Customer customer);
+public interface UpdateCustomer {
+    void update(final Customer customer);
 }

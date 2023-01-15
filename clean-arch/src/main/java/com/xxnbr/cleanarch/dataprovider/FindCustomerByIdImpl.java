@@ -6,11 +6,11 @@ import com.xxnbr.cleanarch.dataprovider.repository.CustomerRepository;
 import com.xxnbr.cleanarch.dataprovider.repository.entity.CustomerEntity;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-@Component
+@Service
 public class FindCustomerByIdImpl implements FindCustomerById {
 
     @Autowired
@@ -22,7 +22,7 @@ public class FindCustomerByIdImpl implements FindCustomerById {
 
         var customer = new Customer();
 
-        if(optionalCustomerEntity.isEmpty())return Optional.empty();
+        if (optionalCustomerEntity.isEmpty()) return Optional.empty();
 
         BeanUtils.copyProperties(optionalCustomerEntity.get(), customer);
 

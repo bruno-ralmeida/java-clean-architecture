@@ -1,1 +1,16 @@
+server:
+  port: 5000
+xxnbr:
+  client:
+    address:
+      url: http://localhost:8080/addresses
 
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      authentication-database: admin
+      username: root
+      password: example
+      database: cleanarch

@@ -6,6 +6,7 @@ import com.xxnbr.cleanarch.core.usecase.FindCustomerByIdUseCase;
 import com.xxnbr.cleanarch.core.usecase.InsertCustomerUsecase;
 import com.xxnbr.cleanarch.core.usecase.UpdateCustomerUseCase;
 import com.xxnbr.cleanarch.entrypoint.controller.request.CustomerRequest;
+import com.xxnbr.cleanarch.entrypoint.controller.response.AddressResponse;
 import com.xxnbr.cleanarch.entrypoint.controller.response.CustomerResponse;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,8 +48,12 @@ public class CustomerController {
         Customer customer = findCustomerByIdUseCase.find(id);
 
         var customerResponse = new CustomerResponse();
+        var addressResponse = new AddressResponse();
 
         BeanUtils.copyProperties(customer, customerResponse);
+        BeanUtils.copyProperties(customer.getAddress(), addressResponse);
+
+        customerResponse.setAddressResponse(addressResponse);
 
         return ResponseEntity.ok(customerResponse);
     }

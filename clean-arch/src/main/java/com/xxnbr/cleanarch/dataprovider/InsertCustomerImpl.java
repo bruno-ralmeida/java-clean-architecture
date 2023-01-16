@@ -15,6 +15,7 @@ public class InsertCustomerImpl implements InsertCustomer {
     @Autowired
     private CustomerRepository repository;
 
+
     @Override
     public void insert(Customer customer) {
         var customerEntity = new CustomerEntity();

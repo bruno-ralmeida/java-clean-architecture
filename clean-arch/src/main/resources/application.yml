@@ -1,6 +1,9 @@
 server:
   port: 5000
 xxnbr:
+  kafka:
+    group-id: xxnbr
+    host: http://localhost:9092
   client:
     address:
       url: http://localhost:8080/addresses
